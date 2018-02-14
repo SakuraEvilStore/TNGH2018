@@ -21,21 +21,21 @@
 	$Email = Trim($Email);
 			
         if (empty($Login) || empty($Pass) || empty($Repass) || empty($Email)) {
-                echo "<script>alert('内容不能为空！');</script>";
+                echo "<script>alert('Nội dung không được để trống!');</script>";
             }
         
         elseif ((ereg("[^0-9a-zA-Z_-]", $Login, $Txt)) or ((StrLen($Pass) < 4) or (StrLen($Pass) > 10))) {
-                echo "<script>alert('帐号由4-10位数字或字母组成！');</script>";
+                echo "<script>alert('Tài khoản bao gồm 4-10 chữ số hoặc chữ cái!');</script>";
             }
             
         elseif ((ereg("[^0-9a-zA-Z_-]", $Pass, $Txt)) or ((StrLen($Pass) < 4) or (StrLen($Pass) > 10))) {
                 echo "<script>alert('密码由4-10数字或字母组成！');</script>";
             }
         elseif ($Pass != $Repass) {
-                echo "<script>alert('两次密码输入不一致！');</script>"; 
+                echo "<script>alert('Mật khẩu bao gồm 4-10 số hoặc chữ cái!');</script>"; 
             }
         elseif (StrPos('\'', $Email)) {
-                echo "<script>alert('邮箱格式输入错误！');</script>"; 
+                echo "<script>alert('Lỗi nhập định dạng e-mail!');</script>"; 
             }    
         else {
 			  $Salt = "0x".md5($Login.$Pass);
@@ -72,25 +72,25 @@
 	<form action="" method="post" >&nbsp;
   <table width="640" height="316" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#B3B3B3">
     <tr>
-      <td colspan="2" align="center" bgcolor="#EBEBEB">会员注册&nbsp;&nbsp;以下打“*”为必填项</td>
+      <td colspan="2" align="center" bgcolor="#EBEBEB">Đăng ký thành viên</td>
     </tr>
     <tr>
-      <td width="156" align="right" bgcolor="#FFFFFF">账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</td>
+      <td width="156" align="right" bgcolor="#FFFFFF">Tên tài khoản：</td>
       <td width="461" bgcolor="#FFFFFF">&nbsp;<input name="login" type="text" size="18" />
-      <font color="#FF0000"> *</font>(由4-10位数字或字母组成)</td>
+      <font color="#FF0000"> *</font>(Bao gồm 4-10 chữ số hoặc chữ cái)</td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#FFFFFF">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+      <td align="right" bgcolor="#FFFFFF">Mật khẩu：</td>
       <td bgcolor="#FFFFFF">&nbsp;<input name="passwd" type="password" size="20" />
-      <font color="#FF0000"> *</font>(由4-10位数字或字母组成)</td>
+      <font color="#FF0000"> *</font>(Bao gồm 4-10 chữ số hoặc chữ cái)</td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#FFFFFF">确认密码：</td>
+      <td align="right" bgcolor="#FFFFFF">Nhập lại mật khẩu：</td>
       <td bgcolor="#FFFFFF">&nbsp;<input name="repasswd" type="password" size="20" />
-      <font color="#FF0000"> *</font>(再次输入密码)</td>
+      <font color="#FF0000"> *</font>(Nhập lại mật khẩu)</td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#FFFFFF">电子邮箱：</td>
+      <td align="right" bgcolor="#FFFFFF">Mail：</td>
       <td bgcolor="#FFFFFF">&nbsp;<input name="email" type="text" size="18" />
       <font color="#FF0000"> *</font></td>
     </tr>
